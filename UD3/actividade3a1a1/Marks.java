@@ -31,16 +31,6 @@ public class Marks {
     }
 
     /**
-     * Cronstructor alternativo, crea un obxeto Marks indicando a capacidade de
-     * notas como parametro
-     *
-     * @param length numero de notas que se podran almacenar
-     */
-    public Marks(int length) {
-        marks = new int[length];
-    }
-
-    /**
      * Recolle por teclado as notas que se queiran gardar
      */
     private void setMarksKeyB() {
@@ -59,8 +49,8 @@ public class Marks {
     public double getAverage() {
         double avrg = 0;
 
-        for (int i = 0; i < marks.length; i++) {
-            avrg += marks[i];
+        for (int mark : marks) {
+            avrg += mark;
         }
 
         avrg /= marks.length;

@@ -23,17 +23,6 @@ public class StudentMarks {
     }
 
     /**
-     * Constructor alternativo, crea unha instancia que almacena o numero de
-     * alumnos dado
-     *
-     * @param length numero de alumnos que se almacenará
-     */
-    public StudentMarks(int length) {
-        students = new String[length];
-        marks = new int[length];
-    }
-
-    /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
