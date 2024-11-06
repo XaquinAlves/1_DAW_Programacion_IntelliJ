@@ -16,6 +16,11 @@ public class Statistics {
      * si
      */
     public Statistics() {
+
+        numberList = getNumbers();
+    }
+
+    private int[] getNumbers() {
         Scanner scan = new Scanner(System.in);
         int length;
 
@@ -28,14 +33,15 @@ public class Statistics {
             length = scan.nextInt();
             scan.nextLine();
         }
-
-        numberList = new int[length];
+        int[] numberList=new int[length];
 
         for (int i = 0; i < length; i++) {
             System.out.print("Introduce el número nº " + i + ": ");
             numberList[i] = scan.nextInt();
             scan.nextLine();
         }
+
+        return numberList;
     }
 
     /**

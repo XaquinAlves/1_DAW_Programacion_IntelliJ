@@ -1,8 +1,8 @@
 package UD3.actividade3a1a1;
 import java.util.Scanner;
 /**
- * Esta clase representa un conjunto de notas, que se almacenan como enteros, y
- * cuenta con un metodo que calcula la media en double
+ * Esta clase representa un conxunto de notas, que se almacenan como enteiros, e
+ * conta cun metodo que calcula a media en double
  *
  * @author Xaquin Alves Gonzalez
  */
@@ -10,8 +10,8 @@ public class Marks {
     private int[] marks;
 
     /**
-     * Creamos una instancia de Marks e invocamos sus metodos para testear su
-     * funcionalidad
+     * Creamos unha instancia de Marks e invocamos os seus metodos para testear a
+     * funcionalidade
      *
      * @param args the command line arguments
      */
@@ -24,7 +24,7 @@ public class Marks {
     }
 
     /**
-     * Constructo por defecto, crea un obxeto Marks con capacidade para 10 notas
+     * Crea un obxeto Marks con capacidade para 10 notas
      */
     public Marks() {
         marks = new int[10];

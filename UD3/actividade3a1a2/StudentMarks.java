@@ -15,7 +15,7 @@ public class StudentMarks {
     private int[] marks;
 
     /**
-     * Constructor por defecto, crea unha instancia que almacena 10 alumnos
+     * Crea un StudentMarks que almacena 10 alumnos con 10 notas
      */
     public StudentMarks() {
         students = new String[10];
@@ -53,7 +53,7 @@ public class StudentMarks {
     }
 
     /**
-     * @return nombre del alumno con peor nota
+     * @return nombre do alumno con peor nota
      */
     public String min() {
         int minor = 0;
@@ -68,7 +68,7 @@ public class StudentMarks {
     }
 
     /**
-     * @return nombre del alumno con mejor nota
+     * @return nombre do alumno con mellor nota
      */
     public String max() {
         int greater = 0;
