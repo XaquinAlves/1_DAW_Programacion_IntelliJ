@@ -56,7 +56,7 @@ public class StudentMarks {
      * @return nombre do alumno con peor nota
      */
     public String min() {
-        int minor = 0;
+        int minor = Integer.MAX_VALUE;
 
         for (int i = 1; i < students.length; i++) {
             if (marks[i] < marks[minor]) {
@@ -71,7 +71,7 @@ public class StudentMarks {
      * @return nombre do alumno con mellor nota
      */
     public String max() {
-        int greater = 0;
+        int greater = Integer.MIN_VALUE;
 
         for (int i = 1; i < students.length; i++) {
             if (marks[i] > marks[greater]) {
