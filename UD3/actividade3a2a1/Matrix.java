@@ -8,11 +8,16 @@ import java.util.Scanner;
  * @author Xaquin Alves Gonzalez
  */
 public class Matrix {
+    //Constante que define o lado da matriz
+    private final int MAX_SIDE = 3;
     //Garda os numeros da matriz
     private int[][] matrix;
 
+    /**
+     * Crea unha instacia de Matrix
+     */
     public Matrix() {
-        matrix = new int[3][3];
+        matrix = new int[MAX_SIDE][MAX_SIDE];
     }
 
     /**
@@ -43,37 +48,17 @@ public class Matrix {
     }
 
     /**
-     * Establece os numéros desta matriz pedindoos por teclado
+     * @return lado da matriz
      */
-    public void setNumbersKeyB() {
-        Scanner scanner = new Scanner(System.in);
-
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix.length; j++) {
-                System.out.print("Introduce el número de la posición " + i + "," + j + ": ");
-                matrix[i][j] = scanner.nextInt();
-                scanner.nextLine();
-            }
-        }
+    public int getMAX_SIDE() {
+        return MAX_SIDE;
     }
 
     /**
-     * Mostra esta matriz por pantalla
+     * @return array que almacena os valores da matriz
      */
-    public void showMatrix() {
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix.length; j++) {
-                System.out.print(matrix[i][j]);
-            }
-            System.out.println();
-        }
-    }
-
-    /**
-     * @return lonxitude do lado da matriz
-     */
-    public int getMatrixLength() {
-        return matrix.length;
+    public int[][] getMatrix() {
+        return matrix;
     }
 
     /**
@@ -95,6 +80,33 @@ public class Matrix {
     }
 
     /**
+     * Establece os numéros desta matriz pedindoos por teclado
+     */
+    public void setNumbersKeyB() {
+        Scanner scanner = new Scanner(System.in);
+
+        for (int i = 0; i < MAX_SIDE; i++) {
+            for (int j = 0; j < MAX_SIDE; j++) {
+                System.out.print("Introduce el número de la posición " + i + "," + j + ": ");
+                matrix[i][j] = scanner.nextInt();
+                scanner.nextLine();
+            }
+        }
+    }
+
+    /**
+     * Mostra esta matriz por pantalla
+     */
+    public void showMatrix() {
+        for (int i = 0; i < MAX_SIDE; i++) {
+            for (int j = 0; j < MAX_SIDE; j++) {
+                System.out.print(matrix[i][j]);
+            }
+            System.out.println();
+        }
+    }
+
+    /**
      * Suma esta matriz coa dada como parámetro
      *
      * @param matrix2 matriz a sumar
@@ -103,8 +115,8 @@ public class Matrix {
     public Matrix sum(Matrix matrix2) {
         Matrix result = new Matrix();
 
-        for (int i = 0; i < result.getMatrixLength(); i++) {
-            for (int j = 0; j < result.getMatrixLength(); j++) {
+        for (int i = 0; i < MAX_SIDE; i++) {
+            for (int j = 0; j < MAX_SIDE; j++) {
                 result.setNumberAt((matrix[i][j] + matrix2.getNumberAt(i, j)), i, j);
             }
         }
@@ -121,8 +133,8 @@ public class Matrix {
     public Matrix substract(Matrix matrix2) {
         Matrix result = new Matrix();
 
-        for (int i = 0; i < result.getMatrixLength(); i++) {
-            for (int j = 0; j < result.getMatrixLength(); j++) {
+        for (int i = 0; i < MAX_SIDE; i++) {
+            for (int j = 0; j < MAX_SIDE; j++) {
                 result.setNumberAt((matrix[i][j] - matrix2.getNumberAt(i, j)), i, j);
             }
         }
@@ -130,11 +142,5 @@ public class Matrix {
         return result;
     }
 
-    /**
-     * @return array que almacena os valores da matriz
-     */
-    public int[][] getMatrix() {
-        return matrix;
-    }
 
 }
