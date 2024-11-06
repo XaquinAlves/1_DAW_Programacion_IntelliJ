@@ -37,7 +37,9 @@ public class Matrix {
         //Sumamolas e amosamolo por pantalla
         System.out.println("La suma de ambas matrices es: ");
         matrix1.sum(matrix2).showMatrix();
-
+        //Restamolas e amosamolo por pantalla
+        System.out.println("El resultado de restar la segunda matriz a la primera es: ");
+        matrix1.substract(matrix2).showMatrix();
     }
 
     /**
@@ -111,7 +113,24 @@ public class Matrix {
     }
 
     /**
+     * Resta a matriz dada como parametro a esta matriz
      *
+     * @param matrix2 matriz que se restará
+     * @return matriz resultado da resta
+     */
+    public Matrix substract(Matrix matrix2) {
+        Matrix result = new Matrix();
+
+        for (int i = 0; i < result.getMatrixLength(); i++) {
+            for (int j = 0; j < result.getMatrixLength(); j++) {
+                result.setNumberAt((matrix[i][j] - matrix2.getNumberAt(i, j)), i, j);
+            }
+        }
+
+        return result;
+    }
+
+    /**
      * @return array que almacena os valores da matriz
      */
     public int[][] getMatrix() {
