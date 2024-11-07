@@ -33,12 +33,12 @@ public class Statistics {
         Scanner scan = new Scanner(System.in);
         int length;
 
-        System.out.println("Indique el número de elementos que introducirá(debe ser impar):  ");
+        System.out.println("Indique el número de elementos que introducirá(debe ser impar, 3 o mayor):  ");
         length = scan.nextInt();
         scan.nextLine();
 
-        while (length % 2 == 0) {
-            System.out.println("El número de elementos debe ser impar. Vuelva a introducirlo: ");
+        while (length % 2 == 0 && length < 3) {
+            System.out.println("El número de elementos debe ser impar, 3 o mayor. Vuelva a introducirlo: ");
             length = scan.nextInt();
             scan.nextLine();
         }
