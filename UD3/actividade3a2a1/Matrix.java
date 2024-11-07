@@ -8,8 +8,6 @@ import java.util.Scanner;
  * @author Xaquin Alves Gonzalez
  */
 public class Matrix {
-    //Constante que define o lado da matriz
-    private final int MAX_SIDE = 3;
     //Garda os numeros da matriz
     private int[][] matrix;
 
@@ -17,7 +15,7 @@ public class Matrix {
      * Crea unha instacia de Matrix
      */
     public Matrix() {
-        matrix = new int[MAX_SIDE][MAX_SIDE];
+        matrix = new int[3][3];
     }
 
     /**
@@ -48,35 +46,10 @@ public class Matrix {
     }
 
     /**
-     * @return lado da matriz
-     */
-    public int getMAX_SIDE() {
-        return MAX_SIDE;
-    }
-
-    /**
      * @return array que almacena os valores da matriz
      */
     public int[][] getMatrix() {
         return matrix;
-    }
-
-    /**
-     * @param x posicion x
-     * @param y posicion y
-     * @return o valor gardado na posicion da matriz indicada
-     */
-    public int getNumberAt(int x, int y) {
-        return matrix[x][y];
-    }
-
-    /**
-     * @param number numero a establecer na posicion
-     * @param x      posicion x
-     * @param y      posicion y
-     */
-    public void setNumberAt(int number, int x, int y) {
-        this.matrix[x][y] = number;
     }
 
     /**
@@ -85,8 +58,8 @@ public class Matrix {
     public void setNumbersKeyB() {
         Scanner scanner = new Scanner(System.in);
 
-        for (int i = 0; i < MAX_SIDE; i++) {
-            for (int j = 0; j < MAX_SIDE; j++) {
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
                 System.out.print("Introduce el número de la posición " + i + "," + j + ": ");
                 matrix[i][j] = scanner.nextInt();
                 scanner.nextLine();
@@ -98,9 +71,9 @@ public class Matrix {
      * Mostra esta matriz por pantalla
      */
     public void showMatrix() {
-        for (int i = 0; i < MAX_SIDE; i++) {
-            for (int j = 0; j < MAX_SIDE; j++) {
-                System.out.print(matrix[i][j]+" ");
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                System.out.print(matrix[i][j] + " ");
             }
             System.out.println();
         }
@@ -115,9 +88,9 @@ public class Matrix {
     public Matrix sum(Matrix matrix2) {
         Matrix result = new Matrix();
 
-        for (int i = 0; i < MAX_SIDE; i++) {
-            for (int j = 0; j < MAX_SIDE; j++) {
-                result.setNumberAt((matrix[i][j] + matrix2.getNumberAt(i, j)), i, j);
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                result.getMatrix()[i][j] = matrix[i][j] + matrix2.getMatrix()[i][j];
             }
         }
 
@@ -133,9 +106,9 @@ public class Matrix {
     public Matrix substract(Matrix matrix2) {
         Matrix result = new Matrix();
 
-        for (int i = 0; i < MAX_SIDE; i++) {
-            for (int j = 0; j < MAX_SIDE; j++) {
-                result.setNumberAt((matrix[i][j] - matrix2.getNumberAt(i, j)), i, j);
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                result.getMatrix()[i][j] = matrix[i][j] - matrix2.getMatrix()[i][j];
             }
         }
 
