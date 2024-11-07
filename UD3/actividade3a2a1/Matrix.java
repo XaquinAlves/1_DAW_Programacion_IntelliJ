@@ -100,7 +100,7 @@ public class Matrix {
     public void showMatrix() {
         for (int i = 0; i < MAX_SIDE; i++) {
             for (int j = 0; j < MAX_SIDE; j++) {
-                System.out.print(matrix[i][j]);
+                System.out.print(matrix[i][j]+" ");
             }
             System.out.println();
         }
