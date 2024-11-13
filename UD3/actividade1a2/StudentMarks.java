@@ -1,4 +1,4 @@
-package UD3.actividade3a1a2;
+package UD3.actividade1a2;
 
 import java.util.Scanner;
 

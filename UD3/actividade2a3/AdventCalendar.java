@@ -1,4 +1,4 @@
-package UD3.actividade3a2a3;
+package UD3.actividade2a3;
 
 /**
  * @author Xaquin Alves Gonzalez
