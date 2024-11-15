@@ -29,6 +29,12 @@ public class Statistics {
         System.out.println("La mediana es : " + stats.median());
     }
 
+    /**
+     * Pide por teclado unha lista de enteiros cunha cantidade impar, pedindo tamen
+     * a lonxitude do array por teclado
+     *
+     * @return array coa lista de enteiros
+     */
     private int[] getNumbers() {
         Scanner scan = new Scanner(System.in);
         int length;
