@@ -8,52 +8,60 @@ import java.util.TreeMap;
 public class WaterBlocks {
 
     public static int calcularAgua(int[] bloques) {
-        int tempWaterBlocks = 0;
-        int resultWaterBlocks = 0;
-        int[] waterBlocks = new int[bloques.length];
+        int waterBlocks = 0;
 
-        for (int i = 0; i < waterBlocks.length; i++) {
-            waterBlocks[i] = 0;
+        boolean[][] areBlocks = new boolean[obtainGreater(bloques)][bloques.length];
+
+        for (int i = areBlocks.length-1; i >=0; i--) {
+            for (int j = 0; j < bloques.length; j++) {
+                if(bloques[j] == i+1){
+                    areBlocks[i][j] = true;
+                }
+            }
         }
 
-        for (int i = 1; i < bloques.length; i++) {
+        boolean[][] areWaterBlocks = new boolean[obtainGreater(bloques)][bloques.length];
 
-            if (bloques[i - 1] > bloques[i]) {
-                if (waterBlocks[i - 1] > 0) {
-                    waterBlocks[i] = waterBlocks[i - 1] + (bloques[i - 1] - bloques[i]);
-                } else {
-                    waterBlocks[i] = bloques[i - 1] - bloques[i];
-                }
-            } else if (bloques[i - 1] < bloques[i]) {
-                if (waterBlocks[i - 1] > 0) {
-                    if (waterBlocks[i - 1] + bloques[i - 1] > bloques[i]) {
-                        waterBlocks[i] = waterBlocks[i - 1] + bloques[i - 1] - bloques[i];
-                    } else {
-                        for (int j = 0; j < waterBlocks.length; j++) {
-                            resultWaterBlocks += waterBlocks[j];
-                            waterBlocks[j] = 0;
-                        }
-                    }
-                } else {
-                    for (int j = 0; j < waterBlocks.length; j++) {
-                        resultWaterBlocks += waterBlocks[j];
-                        waterBlocks[j] = 0;
-                    }
-                }
-            } else {
-                if (waterBlocks[i - 1] + bloques[i - 1] > bloques[i]) {
-                    waterBlocks[i] = waterBlocks[i - 1] + bloques[i - 1] - bloques[i];
-                } else {
-                    for (int j = 0; j < waterBlocks.length; j++) {
-                        resultWaterBlocks += waterBlocks[j];
-                        waterBlocks[j] = 0;
+        for (int i = 0; i < areWaterBlocks.length; i++) {
+            for (int j = 0; j < areWaterBlocks[i].length; j++) {
+                areWaterBlocks[i][j] = false;
+            }
+        }
+        int open = -1;
+
+        for (int i = 0; i < areWaterBlocks.length; i++) {
+            open = -1;
+            for (int j = 0; j < areWaterBlocks[i].length; j++) {
+                if (areBlocks[i][j] && open == -1) {
+                    open = j;
+                } else if (areBlocks[i][j] && open > -1 &&(open+1)<j) {
+                    for (int k = open + 1; k < j; k++) {
+                        areWaterBlocks[i][k] = true;
+                        open = -1;
                     }
                 }
             }
-
         }
 
-        return resultWaterBlocks;
+        for (boolean[] waterBlockRow : areWaterBlocks) {
+            for (boolean waterBlock : waterBlockRow) {
+                if (waterBlock) {
+                    waterBlocks++;
+                }
+            }
+        }
+
+        return waterBlocks;
+    }
+
+    private static int obtainGreater(int[] numbers) {
+        int greater = Integer.MIN_VALUE;
+        for (int number : numbers) {
+            if (number > greater) {
+                greater = number;
+            }
+        }
+        return greater;
     }
 
     public static void main(String[] args) {
