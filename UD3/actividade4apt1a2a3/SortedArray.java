@@ -106,6 +106,12 @@ public class SortedArray {
         System.out.println();
     }
 
+    /**
+     * Comproba se o numero pasado como parametro se atopa dentro do array,
+     * usando o algoritmo de busqueda dicotomica
+     * @param number
+     * @return
+     */
     public boolean contains(int number) {
         if (!sorted) {
             sort();
@@ -124,9 +130,9 @@ public class SortedArray {
             if(ints[mid] == number){
                 return true;
             }else if(number < ints[mid]){
-                max = mid;
+                max = mid-1;
             }else if(number > ints[mid]){
-                min = mid;
+                min = mid+1;
             }
         }
         return false;
