@@ -9,59 +9,27 @@ public class WaterBlocks {
 
     public static int calcularAgua(int[] bloques) {
         int waterBlocks = 0;
+        int greaterIzq;
+        int greaterDrc;
 
-        boolean[][] areBlocks = new boolean[obtainGreater(bloques)][bloques.length];
+        for (int i = 1; i < bloques.length - 1; i++) {
 
-        for (int i = areBlocks.length-1; i >=0; i--) {
-            for (int j = 0; j < bloques.length; j++) {
-                if(bloques[j] == i+1){
-                    areBlocks[i][j] = true;
-                }
+            greaterIzq = Integer.MIN_VALUE;
+            greaterDrc = Integer.MIN_VALUE;
+
+            for (int j = 0; j < i; j++) {
+                greaterIzq = Math.max(greaterIzq,bloques[j]);
             }
-        }
-
-        boolean[][] areWaterBlocks = new boolean[obtainGreater(bloques)][bloques.length];
-
-        for (int i = 0; i < areWaterBlocks.length; i++) {
-            for (int j = 0; j < areWaterBlocks[i].length; j++) {
-                areWaterBlocks[i][j] = false;
+            for (int j = i; j < bloques.length; j++) {
+                greaterDrc = Math.max(greaterDrc,bloques[j]);
             }
-        }
-        int open = -1;
-
-        for (int i = 0; i < areWaterBlocks.length; i++) {
-            open = -1;
-            for (int j = 0; j < areWaterBlocks[i].length; j++) {
-                if (areBlocks[i][j] && open == -1) {
-                    open = j;
-                } else if (areBlocks[i][j] && open > -1 &&(open+1)<j) {
-                    for (int k = open + 1; k < j; k++) {
-                        areWaterBlocks[i][k] = true;
-                        open = -1;
-                    }
-                }
-            }
-        }
-
-        for (boolean[] waterBlockRow : areWaterBlocks) {
-            for (boolean waterBlock : waterBlockRow) {
-                if (waterBlock) {
-                    waterBlocks++;
-                }
+            int wall = Math.min(greaterDrc,greaterIzq);
+            if(wall > bloques[i]){
+                waterBlocks += wall - bloques[i];
             }
         }
 
         return waterBlocks;
-    }
-
-    private static int obtainGreater(int[] numbers) {
-        int greater = Integer.MIN_VALUE;
-        for (int number : numbers) {
-            if (number > greater) {
-                greater = number;
-            }
-        }
-        return greater;
     }
 
     public static void main(String[] args) {
