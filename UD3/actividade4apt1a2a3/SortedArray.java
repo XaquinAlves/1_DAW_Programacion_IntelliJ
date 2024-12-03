@@ -42,9 +42,9 @@ public class SortedArray {
         System.out.println("Introduce un numero a buscar: ");
         int search = scanner.nextInt();
         scanner.nextLine();
-        if(sortedArray.contains(search)){
+        if (sortedArray.contains(search)) {
             System.out.println("O numero esta na lista");
-        }else{
+        } else {
             System.out.println("O numero non esta na lista");
         }
 
@@ -109,6 +109,7 @@ public class SortedArray {
     /**
      * Comproba se o numero pasado como parametro se atopa dentro do array,
      * usando o algoritmo de busqueda dicotomica
+     *
      * @param number
      * @return
      */
@@ -120,19 +121,19 @@ public class SortedArray {
         int max = MAX_NUMBERS - 1;
         int mid;
 
-        if(number == ints[min] || number == ints[max]){
+        if (number == ints[min] || number == ints[max]) {
             return true;
-        }
+        } else {
+            while (max - 1 != min && number > ints[min] && number < ints[max]) {
+                mid = (min + max) / 2;
 
-        while (max - 1 != min && number > ints[min] && number < ints[max]) {
-            mid = (min+max)/2;
-
-            if(ints[mid] == number){
-                return true;
-            }else if(number < ints[mid]){
-                max = mid-1;
-            }else if(number > ints[mid]){
-                min = mid+1;
+                if (ints[mid] == number) {
+                    return true;
+                } else if (number < ints[mid]) {
+                    max = mid - 1;
+                } else if (number > ints[mid]) {
+                    min = mid + 1;
+                }
             }
         }
         return false;
