@@ -33,6 +33,11 @@ public class SortedArray {
         sorted = false;
     }
 
+    /**
+     * Creamos unha instancia desta clase e comprobamos o funcionamento dos metodos
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         SortedArray sortedArray = new SortedArray();
