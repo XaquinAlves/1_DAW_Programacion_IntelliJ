@@ -1,4 +1,4 @@
-package UD4.actividade2.apartado2;
+package UD4.actividade2;
 
 /**
  * Esta clase representa a un profesor interino

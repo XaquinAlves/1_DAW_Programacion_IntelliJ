@@ -1,4 +1,4 @@
-package UD4.actividade2.apartado2;
+package UD4.actividade2;
 
 /**
  * Esta clase representa a un funcionario de carreira, que é un tipo de profesor(Subclase de Teacher)

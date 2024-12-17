@@ -1,4 +1,4 @@
-package UD4.actividade2.apartado2;
+package UD4.actividade2;
 
 import java.util.Date;
 
