@@ -35,8 +35,9 @@ public class Radio extends Device implements Speaker {
     public void speak() {
         System.out.println("Ola, son unha RADIO e sei falar");
         System.out.println("Consumo: "+consumption+"\tPrecio: "+price);
-        if (this.cassette){System.out.print("Cassette: Si\t");}
-        else{System.out.print("Cassette: No\t");}
+        if (this.cassette){
+            System.out.print("Cassette: Si\t");
+        } else{System.out.print("Cassette: No\t");}
         System.out.println("Potencia: "+power);
     }
 }

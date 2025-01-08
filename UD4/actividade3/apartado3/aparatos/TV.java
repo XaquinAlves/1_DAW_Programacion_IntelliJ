@@ -35,8 +35,9 @@ public class TV extends Device implements Speaker {
     public void speak() {
         System.out.println("Ola son unha TELEVISION e sei falar");
         System.out.println("Consumo: "+consumption+"\tPrecio: "+price);
-        if (this.teletext){System.out.print("Teletexto: Si\t");}
-        else{System.out.print("Teletexto: No\t");}
+        if (this.teletext){
+            System.out.print("Teletexto: Si\t");
+        } else{System.out.print("Teletexto: No\t");}
         System.out.println("Pulgadas: "+inches);
     }
 }

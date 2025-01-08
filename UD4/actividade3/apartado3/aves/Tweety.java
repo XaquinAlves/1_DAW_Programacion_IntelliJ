@@ -28,5 +28,8 @@ public class Tweety extends Canary implements Speaker {
     @Override
     public void speak() {
         System.out.println("Ola son Piolin e sei falar");
+        if(sex == 'm'){
+            System.out.println("");
+        }
     }
 }
