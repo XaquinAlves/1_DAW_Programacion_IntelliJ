@@ -1,6 +1,6 @@
 package UD4.actividade3.apartado2;
 
-import java.awt.*;
+import java.awt.Color;
 
 /**
  * Esta clase representa unha figura calquera, que sera especificada mediante as clases que a extenden,
@@ -9,6 +9,7 @@ import java.awt.*;
  * @author Xaquin Alves González
  */
 public abstract class Shape implements Coloreable {
+    //Color da forma
     Color color;
 
     /**
