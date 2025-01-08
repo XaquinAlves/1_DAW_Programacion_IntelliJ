@@ -39,5 +39,6 @@ public class TV extends Device implements Speaker {
             System.out.print("Teletexto: Si\t");
         } else{System.out.print("Teletexto: No\t");}
         System.out.println("Pulgadas: "+inches);
+        System.out.println();
     }
 }

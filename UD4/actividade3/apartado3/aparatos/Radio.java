@@ -39,5 +39,6 @@ public class Radio extends Device implements Speaker {
             System.out.print("Cassette: Si\t");
         } else{System.out.print("Cassette: No\t");}
         System.out.println("Potencia: "+power);
+        System.out.println();
     }
 }
