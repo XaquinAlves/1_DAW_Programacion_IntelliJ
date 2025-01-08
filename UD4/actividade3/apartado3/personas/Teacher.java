@@ -30,7 +30,7 @@ public class Teacher extends Person implements Speaker {
      */
     @Override
     public void speak() {
-        System.out.println("ola son un PROFESOR e sei falar");
+        System.out.println("Ola son un PROFESOR e sei falar");
         System.out.println("Nome: "+name+"\tIdade: "+age);
         System.out.println("Despacho: "+office+"\tEmail: "+email);
         System.out.println();
