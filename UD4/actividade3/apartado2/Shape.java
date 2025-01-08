@@ -8,7 +8,9 @@ import java.awt.*;
  *
  * @author Xaquin Alves González
  */
-public abstract class Shape implements Coloreable{
+public abstract class Shape implements Coloreable {
+    Color color;
+
     /**
      * Debuxa a figura
      */
@@ -19,13 +21,23 @@ public abstract class Shape implements Coloreable{
      */
     public abstract void errase();
 
+    /**
+     * Obten o color da forma
+     *
+     * @return color da forma
+     */
     @Override
     public Color getColor() {
-        return null;
+        return color;
     }
 
+    /**
+     * Establece a cor da forma
+     *
+     * @param c cor a establecer
+     */
     @Override
     public void setColor(Color c) {
-
+        color = c;
     }
 }

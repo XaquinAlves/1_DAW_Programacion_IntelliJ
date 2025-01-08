@@ -21,4 +21,5 @@ public interface Coloreable {
      * @param c cor a establecer
      */
     void setColor(Color c);
+
 }
