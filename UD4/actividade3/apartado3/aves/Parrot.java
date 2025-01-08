@@ -31,5 +31,11 @@ public class Parrot extends Bird implements Speaker {
     @Override
     public void speak() {
         System.out.println("Ola son un LORO e sei falar");
+        if(sex == 'm'){
+            System.out.print("Sexo: masculino\t");
+        }else{System.out.print("Sexo: femenino\t");}
+        System.out.println("Idade: "+age);
+
+        System.out.println("Rexion: "+region+"\tColor: "+color);
     }
 }

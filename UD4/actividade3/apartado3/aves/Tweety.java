@@ -29,7 +29,10 @@ public class Tweety extends Canary implements Speaker {
     public void speak() {
         System.out.println("Ola son Piolin e sei falar");
         if(sex == 'm'){
-            System.out.println("");
-        }
+            System.out.print("Sexo: masculino\t");
+        }else{System.out.print("Sexo: femenino\t");}
+        System.out.println("Idade: "+age);
+
+        System.out.println("Canto: "+sing+"\tNumero de peliculas: "+numberOfFilms);
     }
 }

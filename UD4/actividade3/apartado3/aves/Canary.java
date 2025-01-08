@@ -7,7 +7,7 @@ package UD4.actividade3.apartado3.aves;
  */
 public class Canary extends Bird{
     //Canto do canario
-    private String sing;
+    protected String sing;
 
     /**
      * Crea un novo canario
