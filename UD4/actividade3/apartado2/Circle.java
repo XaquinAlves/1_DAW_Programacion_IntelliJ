@@ -1,13 +1,11 @@
-package UD4.actividade3.apartado1;
-
-import java.awt.*;
+package UD4.actividade3.apartado2;
 
 /**
  * Esta clase representa a figura circulo
  *
  * @author Xaquin Alves Gonzalez
  */
-public class Circle extends Shape{
+public class Circle extends Shape {
     /**
      * Crea un novo circulo
      */

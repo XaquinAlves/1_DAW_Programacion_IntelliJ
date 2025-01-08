@@ -1,8 +1,4 @@
-package UD4.actividade3.apartado1;
-
-import UD4.actividade3.apartado2.Coloreable;
-
-import java.awt.Color;
+package UD4.actividade3.apartado2;
 
 /**
  * Esta clase representa unha figura calquera, que sera especificada mediante as clases que a extenden,
@@ -10,8 +6,7 @@ import java.awt.Color;
  *
  * @author Xaquin Alves González
  */
-public abstract class Shape{
-    Color color;
+public abstract class Shape {
     /**
      * Debuxa a figura
      */
