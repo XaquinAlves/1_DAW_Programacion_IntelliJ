@@ -9,8 +9,6 @@ import UD4.actividade3.apartado3.personas.Concierge;
 import UD4.actividade3.apartado3.personas.Student;
 import UD4.actividade3.apartado3.personas.Teacher;
 
-import java.sql.Array;
-
 /**
  * Nesta clase probamos as clases que implementan a interface Speaker
  */
@@ -31,8 +29,8 @@ public class MainApp {
 
         Speaker[] speakers = {loro,piolin,alumno,profesor,bedel,tele,radio};
 
-        for (int i = 0; i < speakers.length; i++) {
-            speakers[i].speak();
+        for (Speaker speaker : speakers) {
+            speaker.speak();
         }
     }
 }
