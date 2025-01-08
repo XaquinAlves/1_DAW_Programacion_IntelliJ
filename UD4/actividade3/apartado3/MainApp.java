@@ -1,6 +1,5 @@
-package UD4.actividade3.apartado2;
+package UD4.actividade3.apartado3;
 
-import UD4.actividade3.apartado3.Speaker;
 import UD4.actividade3.apartado3.aparatos.Radio;
 import UD4.actividade3.apartado3.aparatos.TV;
 import UD4.actividade3.apartado3.aves.Parrot;
