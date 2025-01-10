@@ -42,7 +42,11 @@ public class SortedArray {
         Scanner scanner = new Scanner(System.in);
         SortedArray sortedArray = new SortedArray();
 
-        sortedArray.show();
+        try {
+            sortedArray.show();
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Produciuse un erro! Superouse o limite do array");
+        }
 
         System.out.println("Introduce un numero a buscar: ");
         int search = scanner.nextInt();
@@ -103,10 +107,10 @@ public class SortedArray {
     /**
      * Amosa o array por patalla
      */
-    public void show() {
+    public void show() throws ArrayIndexOutOfBoundsException{
         System.out.println("Contido do array: ");
-        for (Integer integer : ints) {
-            System.out.print(integer + ", ");
+        for (int i = 0; i < ints.length+1; i++) {
+            System.out.println(ints[i]+", ");
         }
         System.out.println();
     }

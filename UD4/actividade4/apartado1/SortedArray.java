@@ -103,7 +103,7 @@ public class SortedArray {
     /**
      * Amosa o array por patalla
      */
-    public void show() {
+    public void show() throws ArrayIndexOutOfBoundsException{
         System.out.println("Contido do array: ");
         try{
             for (int i = 0; i < ints.length+1; i++) {
